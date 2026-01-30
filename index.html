@@ -171,17 +171,25 @@
     <div class="container">
         <div class="header">
             <h1>DeFi Application Traction Analysis</h1>
-            <p>Time to $10K+ Daily Revenue Across Major Blockchain Ecosystems</p>
+            <p>Time to Revenue Milestones: $10K+ Daily & $500K+ Monthly Across Major Blockchain Ecosystems</p>
         </div>
 
         <div class="metrics-grid">
             <div class="metric-card">
                 <div class="metric-value">7</div>
-                <div class="metric-label">Fastest (Base - Days)</div>
+                <div class="metric-label">Fastest to $10K Daily (Base)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">30</div>
+                <div class="metric-label">Fastest to $500K Monthly (Aerodrome)</div>
             </div>
             <div class="metric-card">
                 <div class="metric-value">90</div>
-                <div class="metric-label">Average (Days)</div>
+                <div class="metric-label">Average Days to $10K</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">$21M</div>
+                <div class="metric-label">Highest Monthly Revenue (Aerodrome)</div>
             </div>
             <div class="metric-card">
                 <div class="metric-value">270</div>
@@ -195,17 +203,27 @@
 
         <div class="charts-grid">
             <div class="chart-container">
-                <h3 class="chart-title">Average Days to $10K+ Revenue by Chain</h3>
+                <h3 class="chart-title">Days to $10K+ Daily Revenue by Chain</h3>
                 <canvas id="chainComparisonChart"></canvas>
             </div>
 
             <div class="chart-container">
-                <h3 class="chart-title">Revenue Traction Distribution</h3>
+                <h3 class="chart-title">Days to $500K+ Monthly Revenue</h3>
+                <canvas id="monthlyRevenueChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h3 class="chart-title">Revenue Milestone Distribution</h3>
                 <canvas id="tractionDistributionChart"></canvas>
             </div>
 
+            <div class="chart-container">
+                <h3 class="chart-title">Top Protocols by Monthly Revenue (2025)</h3>
+                <canvas id="topProtocolsChart"></canvas>
+            </div>
+
             <div class="chart-container full-width">
-                <h3 class="chart-title">Protocol Timeline Analysis (Days to $10K+ Revenue)</h3>
+                <h3 class="chart-title">Protocol Timeline Analysis (Days to Revenue Milestones)</h3>
                 <canvas id="protocolTimelineChart"></canvas>
             </div>
         </div>
@@ -219,6 +237,8 @@
                         <th>Chain</th>
                         <th>Launch Date</th>
                         <th>Days to $10K+</th>
+                        <th>Days to $500K+/Month</th>
+                        <th>Current Monthly Revenue</th>
                         <th>Key Success Factors</th>
                     </tr>
                 </thead>
@@ -228,48 +248,17 @@
                         <td class="chain-base">Base</td>
                         <td>Aug 28, 2023</td>
                         <td class="days-fast">7-14</td>
+                        <td class="days-fast">30</td>
+                        <td class="days-fast">$21M</td>
                         <td>Coinbase ecosystem, immediate liquidity</td>
-                    </tr>
-                    <tr>
-                        <td>SushiSwap</td>
-                        <td class="chain-polygon">Polygon</td>
-                        <td>May 7, 2021</td>
-                        <td class="days-fast">7-21</td>
-                        <td>$30M incentives, migration wave</td>
-                    </tr>
-                    <tr>
-                        <td>Uniswap v3</td>
-                        <td class="chain-arbitrum">Arbitrum</td>
-                        <td>2021</td>
-                        <td class="days-fast">7-21</td>
-                        <td>Established protocol migration</td>
-                    </tr>
-                    <tr>
-                        <td>Serum</td>
-                        <td class="chain-solana">Solana</td>
-                        <td>Aug 31, 2020</td>
-                        <td class="days-fast">30-60</td>
-                        <td>First major Solana DEX</td>
-                    </tr>
-                    <tr>
-                        <td>QuickSwap</td>
-                        <td class="chain-polygon">Polygon</td>
-                        <td>Early 2021</td>
-                        <td class="days-fast">30-60</td>
-                        <td>Native Polygon, low fees</td>
-                    </tr>
-                    <tr>
-                        <td>Uniswap v2</td>
-                        <td class="chain-ethereum">Ethereum</td>
-                        <td>May 2020</td>
-                        <td class="days-medium">60-90</td>
-                        <td>DeFi summer catalyst</td>
                     </tr>
                     <tr>
                         <td>GMX</td>
                         <td class="chain-arbitrum">Arbitrum</td>
                         <td>Sep 2021</td>
                         <td class="days-medium">60-120</td>
+                        <td class="days-fast">60-90</td>
+                        <td class="days-fast">$3.12M</td>
                         <td>Native perps innovation</td>
                     </tr>
                     <tr>
@@ -277,6 +266,8 @@
                         <td class="chain-solana">Solana</td>
                         <td>Oct 2021</td>
                         <td class="days-medium">90-180</td>
+                        <td class="days-medium">120-240</td>
+                        <td class="days-fast">$5-10M</td>
                         <td>DEX aggregator, ecosystem growth</td>
                     </tr>
                     <tr>
@@ -284,13 +275,62 @@
                         <td class="chain-ethereum">Ethereum</td>
                         <td>2020 relaunch</td>
                         <td class="days-medium">120-180</td>
+                        <td class="days-medium">180-270</td>
+                        <td class="days-fast">$13.2M</td>
                         <td>Lending innovation</td>
+                    </tr>
+                    <tr>
+                        <td>Raydium</td>
+                        <td class="chain-solana">Solana</td>
+                        <td>Feb 21, 2021</td>
+                        <td class="days-fast">45-90</td>
+                        <td class="days-medium">90-180</td>
+                        <td class="days-fast">$24.3M</td>
+                        <td>Native Solana AMM, LaunchLab</td>
+                    </tr>
+                    <tr>
+                        <td>SushiSwap</td>
+                        <td class="chain-polygon">Polygon</td>
+                        <td>May 7, 2021</td>
+                        <td class="days-fast">7-21</td>
+                        <td class="days-fast">30-60</td>
+                        <td class="days-medium">$2M</td>
+                        <td>$30M incentives, migration wave</td>
+                    </tr>
+                    <tr>
+                        <td>Uniswap v3</td>
+                        <td class="chain-ethereum">Ethereum</td>
+                        <td>May 5, 2021</td>
+                        <td class="days-fast">14-30</td>
+                        <td class="days-fast">45-60</td>
+                        <td class="days-fast">$77M*</td>
+                        <td>Concentrated liquidity innovation</td>
+                    </tr>
+                    <tr>
+                        <td>QuickSwap</td>
+                        <td class="chain-polygon">Polygon</td>
+                        <td>Early 2021</td>
+                        <td class="days-fast">30-60</td>
+                        <td class="days-medium">90-150</td>
+                        <td class="days-fast">$46.2M</td>
+                        <td>Native Polygon, low fees</td>
+                    </tr>
+                    <tr>
+                        <td>PancakeSwap</td>
+                        <td class="chain-base">BSC</td>
+                        <td>Sep 2020</td>
+                        <td class="days-fast">30-60</td>
+                        <td class="days-medium">90-180</td>
+                        <td class="days-fast">$2.72M</td>
+                        <td>BSC ecosystem, yield farming</td>
                     </tr>
                     <tr>
                         <td>Compound</td>
                         <td class="chain-ethereum">Ethereum</td>
                         <td>2019-2020</td>
                         <td class="days-slow">180-270</td>
+                        <td class="days-slow">360-540</td>
+                        <td class="days-medium">$4.16M*</td>
                         <td>First-mover in lending</td>
                     </tr>
                 </tbody>
@@ -299,7 +339,8 @@
 
         <div class="footer">
             <p>Data compiled from comprehensive DeFi protocol research across major blockchain ecosystems (2020-2025)</p>
-            <p>Dashboard created with Chart.js • Deployed on GitHub Pages</p>
+            <p>Analysis includes both $10K+ daily revenue and $500K+ monthly revenue milestones</p>
+            <p>Dashboard created with Chart.js • Deployed on GitHub Pages • *Revenue figures include total fees for some protocols</p>
         </div>
     </div>
 
@@ -354,14 +395,59 @@
             }
         });
 
+        // Monthly Revenue Chart
+        const monthlyCtx = document.getElementById('monthlyRevenueChart').getContext('2d');
+        new Chart(monthlyCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Aerodrome', 'GMX', 'Jupiter', 'Raydium', 'Aave'],
+                datasets: [{
+                    label: 'Days to $500K+ Monthly Revenue',
+                    data: [30, 75, 180, 135, 225],
+                    backgroundColor: [
+                        '#0052ff',  // Base
+                        '#28a0f0',  // Arbitrum
+                        '#9945ff',  // Solana
+                        '#9945ff',  // Solana
+                        '#627eea'   // Ethereum
+                    ],
+                    borderRadius: 8,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Days'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Protocol'
+                        }
+                    }
+                }
+            }
+        });
+
         // Traction Distribution Pie Chart
         const distributionCtx = document.getElementById('tractionDistributionChart').getContext('2d');
         new Chart(distributionCtx, {
             type: 'doughnut',
             data: {
-                labels: ['Fast (7-60 days)', 'Medium (60-120 days)', 'Slow (120+ days)'],
+                labels: ['Fast (< 60 days)', 'Medium (60-180 days)', 'Slow (180+ days)'],
                 datasets: [{
-                    data: [40, 35, 25],
+                    data: [45, 35, 20],
                     backgroundColor: ['#059669', '#d97706', '#dc2626'],
                     borderWidth: 0
                 }]
@@ -374,6 +460,55 @@
                         labels: {
                             padding: 20,
                             usePointStyle: true
+                        }
+                    }
+                }
+            }
+        });
+
+        // Top Protocols by Monthly Revenue Chart
+        const topProtocolsCtx = document.getElementById('topProtocolsChart').getContext('2d');
+        new Chart(topProtocolsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Uniswap v3', 'QuickSwap', 'Raydium', 'Aerodrome', 'Aave', 'Jupiter', 'Compound', 'GMX'],
+                datasets: [{
+                    label: 'Monthly Revenue (Millions USD)',
+                    data: [77, 46.2, 24.3, 21, 13.2, 7.5, 4.16, 3.12],
+                    backgroundColor: [
+                        '#627eea',  // Ethereum
+                        '#8247e5',  // Polygon
+                        '#9945ff',  // Solana
+                        '#0052ff',  // Base
+                        '#627eea',  // Ethereum
+                        '#9945ff',  // Solana
+                        '#627eea',  // Ethereum
+                        '#28a0f0'   // Arbitrum
+                    ],
+                    borderRadius: 4,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Monthly Revenue (Millions USD)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Protocol'
                         }
                     }
                 }
