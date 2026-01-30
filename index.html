@@ -186,12 +186,12 @@
                 <div class="metric-label">Fastest to $500K Monthly (Aerodrome)</div>
             </div>
             <div class="metric-card">
-                <div class="metric-value">75</div>
-                <div class="metric-label">Average Days to $10K</div>
+                <div class="metric-value">85</div>
+                <div class="metric-label">Average Days to $10K (Achieved)</div>
             </div>
             <div class="metric-card">
-                <div class="metric-value">$77M</div>
-                <div class="metric-label">Highest Monthly Revenue (Uniswap)</div>
+                <div class="metric-value">$80M</div>
+                <div class="metric-label">Highest Monthly Revenue (MakerDAO)</div>
             </div>
             <div class="metric-card">
                 <div class="metric-value">540</div>
@@ -250,19 +250,19 @@
                         <td><strong>Railgun</strong></td>
                         <td class="chain-ethereum">Multi-chain</td>
                         <td>Jul 2021</td>
-                        <td class="days-fast">30-45</td>
-                        <td class="days-medium">60-90</td>
-                        <td class="days-fast">$5M</td>
-                        <td>Privacy protocol, multi-chain launch</td>
+                        <td class="days-slow">450+</td>
+                        <td class="days-slow">Not achieved</td>
+                        <td class="days-medium">$300K+</td>
+                        <td>Privacy protocol, 0.25% fee structure</td>
                     </tr>
                     <tr>
                         <td><strong>Tornado Cash</strong></td>
                         <td class="chain-ethereum">Ethereum</td>
                         <td>Aug 2019</td>
-                        <td class="days-medium">60-90</td>
-                        <td class="days-medium">120-180</td>
-                        <td class="days-medium">$780K</td>
-                        <td>Privacy mixer, regulatory challenges</td>
+                        <td class="days-slow">Never achieved</td>
+                        <td class="days-slow">Never achieved</td>
+                        <td class="days-slow">~$0</td>
+                        <td>Public good, no protocol revenue model</td>
                     </tr>
                     
                     <!-- Existing Top Protocols -->
@@ -496,8 +496,8 @@
 
         <div class="footer">
             <p>Data compiled from comprehensive research of 25+ DeFi protocols across 8 major blockchain ecosystems (2019-2025)</p>
-            <p>Analysis includes both $10K+ daily revenue and $500K+ monthly revenue milestones • Privacy protocols Railgun & Tornado Cash highlighted</p>
-            <p>Dashboard created with Chart.js • Deployed on GitHub Pages • Revenue figures represent annualized/monthly totals where available</p>
+            <p>Analysis focuses on actual FEE REVENUE milestones: $10K+ daily and $500K+ monthly • Note: Some protocols (Tornado Cash) operated without revenue models</p>
+            <p>Dashboard created with Chart.js • Deployed on GitHub Pages • Revenue = protocol fees collected, not transaction volume</p>
         </div>
     </div>
 
@@ -559,10 +559,10 @@
         new Chart(monthlyCtx, {
             type: 'bar',
             data: {
-                labels: ['Benqi', 'SushiSwap', 'Aerodrome', 'Balancer', 'Uniswap v3', 'Railgun', 'GMX', 'Tornado Cash'],
+                labels: ['Benqi', 'SushiSwap', 'Aerodrome', 'Balancer', 'Uniswap v3', 'PancakeSwap', 'GMX', 'Venus'],
                 datasets: [{
                     label: 'Days to $500K+ Monthly Revenue',
-                    data: [45, 37, 30, 60, 52, 75, 75, 150],
+                    data: [45, 37, 30, 60, 52, 75, 75, 110],
                     backgroundColor: [
                         '#e84142',  // Avalanche
                         '#8247e5',  // Multi-chain
@@ -715,7 +715,6 @@
                         label: 'Multi-chain',
                         data: [
                             { x: 'Aug 2020', y: 10 }, // SushiSwap
-                            { x: 'Jul 2021', y: 37 }, // Railgun
                             { x: 'Aug 2020', y: 52 }, // 1inch
                             { x: 'Dec 2020', y: 37 }  // ParaSwap
                         ],
@@ -764,7 +763,6 @@
                             { x: 'May 2021', y: 22 },  // Uniswap v3
                             { x: 'Jun 2020', y: 150 }, // Aave
                             { x: 'Apr 2020', y: 225 }, // Compound
-                            { x: 'Aug 2019', y: 75 },  // Tornado Cash
                             { x: 'Nov 2019', y: 150 }, // MakerDAO
                             { x: 'May 2021', y: 32 },  // Balancer V2
                             { x: 'May 2021', y: 32 },  // Convex Finance
