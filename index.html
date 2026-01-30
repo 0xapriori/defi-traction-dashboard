@@ -178,23 +178,23 @@
 
         <div class="metrics-grid">
             <div class="metric-card">
-                <div class="metric-value">10</div>
-                <div class="metric-label">Fastest to $10K Daily (Aerodrome)</div>
+                <div class="metric-value">3-7</div>
+                <div class="metric-label">Fastest to $10K Daily (Uniswap v3)</div>
             </div>
             <div class="metric-card">
-                <div class="metric-value">30</div>
-                <div class="metric-label">Fastest to $500K Monthly (Aerodrome)</div>
+                <div class="metric-value">25</div>
+                <div class="metric-label">Fastest to $500K Monthly (Uniswap v3)</div>
             </div>
             <div class="metric-card">
-                <div class="metric-value">120</div>
-                <div class="metric-label">Average Days to $10K (Actual Revenue)</div>
+                <div class="metric-value">95</div>
+                <div class="metric-label">Average Days to $10K (Including LP fees)</div>
             </div>
             <div class="metric-card">
-                <div class="metric-value">$22M</div>
-                <div class="metric-label">Highest Monthly Revenue (MakerDAO)</div>
+                <div class="metric-value">$93M</div>
+                <div class="metric-label">Highest Monthly Revenue (Uniswap v3*)</div>
             </div>
             <div class="metric-card">
-                <div class="metric-value">5</div>
+                <div class="metric-value">3</div>
                 <div class="metric-label">Protocols Never Achieved $10K Daily</div>
             </div>
             <div class="metric-card">
@@ -259,10 +259,10 @@
                         <td><strong>Tornado Cash</strong></td>
                         <td class="chain-ethereum">Ethereum</td>
                         <td>Aug 2019</td>
-                        <td class="days-slow">Never achieved</td>
-                        <td class="days-slow">Never achieved</td>
-                        <td class="days-slow">~$0</td>
-                        <td>Public good, no protocol revenue model</td>
+                        <td class="days-slow">450-500</td>
+                        <td class="days-slow">~1,000+</td>
+                        <td class="days-medium" title="Peak $540K-825K monthly in relayer fees (0.05-0.2%), not protocol treasury">$540K*</td>
+                        <td>Fees to relayers, sanctioned Aug 2022</td>
                     </tr>
                     
                     <!-- Existing Top Protocols -->
@@ -279,10 +279,10 @@
                         <td>Uniswap v3</td>
                         <td class="chain-ethereum">Ethereum</td>
                         <td>May 5, 2021</td>
-                        <td class="days-slow">Never achieved</td>
-                        <td class="days-slow">Never achieved</td>
-                        <td class="days-slow">$0</td>
-                        <td>Protocol fees not activated</td>
+                        <td class="days-fast">3-7</td>
+                        <td class="days-fast">25-30</td>
+                        <td class="days-fast" title="$93M average monthly LP fees (0.01-1%), protocol fees started Dec 2025">$93M*</td>
+                        <td>LP fees to providers, protocol fees new</td>
                     </tr>
                     
                     <!-- DEX Protocols -->
@@ -496,8 +496,8 @@
 
         <div class="footer">
             <p>Data compiled from comprehensive research of 25+ DeFi protocols across 8 major blockchain ecosystems (2019-2025)</p>
-            <p>Analysis focuses on actual FEE REVENUE milestones: $10K+ daily and $500K+ monthly • Note: Some protocols (Tornado Cash) operated without revenue models</p>
-            <p>Dashboard created with Chart.js • Deployed on GitHub Pages • Revenue = protocol fees collected, not transaction volume</p>
+            <p>Analysis focuses on actual FEE REVENUE milestones: $10K+ daily and $500K+ monthly • <strong>*Asterisk</strong> = includes LP/token holder fees (hover for details)</p>
+            <p>Dashboard created with Chart.js • Deployed on GitHub Pages • Revenue = total protocol ecosystem fees, not just treasury</p>
         </div>
     </div>
 
@@ -633,11 +633,12 @@
         new Chart(topProtocolsCtx, {
             type: 'bar',
             data: {
-                labels: ['MakerDAO', 'Aerodrome', 'PancakeSwap', 'Orca', 'dYdX', 'Aave', 'GMX', 'Raydium', 'Yearn', 'Convex'],
+                labels: ['Uniswap v3*', 'MakerDAO', 'Aerodrome', 'PancakeSwap', 'Orca', 'dYdX', 'Aave', 'GMX', 'Raydium', 'Yearn'],
                 datasets: [{
                     label: 'Monthly Revenue (Millions USD)',
-                    data: [22, 21, 18.5, 3.8, 3.8, 3.5, 3.1, 2.4, 2.2, 1.8],
+                    data: [93, 22, 21, 18.5, 3.8, 3.8, 3.5, 3.1, 2.4, 2.2],
                     backgroundColor: [
+                        '#627eea',  // Uniswap v3* - Ethereum
                         '#627eea',  // MakerDAO - Ethereum
                         '#0052ff',  // Aerodrome - Base
                         '#f0b90b',  // PancakeSwap - BSC
@@ -647,7 +648,7 @@
                         '#28a0f0',  // GMX - Arbitrum
                         '#9945ff',  // Raydium - Solana
                         '#627eea',  // Yearn - Ethereum
-                        '#627eea'   // Convex - Ethereum
+                        '#627eea'   // Yearn - Ethereum
                     ],
                     borderRadius: 4,
                     borderSkipped: false
